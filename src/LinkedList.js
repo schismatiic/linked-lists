@@ -123,5 +123,25 @@ class LinkedList {
     }
     console.log(stringToPrint);
   }
+  insertAt(index, ...values) {
+    const insertFrom = this.at(index - 1);
+    let tmp = this.head;
+    if (tmp.value === insertFrom) {
+      values.forEach((val) => {
+        tmp.nextNode = new Node(val, tmp.nextNode);
+        tmp = tmp.nextNode;
+      });
+    }
+    while (tmp.nextNode !== null) {
+      tmp = tmp.nextNode;
+      if (tmp.value === insertFrom) {
+        values.forEach((val) => {
+          tmp.nextNode = new Node(val, tmp.nextNode);
+          tmp = tmp.nextNode;
+        });
+      }
+    }
+    return -1;
+  }
 }
 export { LinkedList };
