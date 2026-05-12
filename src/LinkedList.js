@@ -124,6 +124,9 @@ class LinkedList {
     console.log(stringToPrint);
   }
   insertAt(index, ...values) {
+    if (index < 0 || index >= this.size()) {
+      throw RangeError;
+    }
     const insertFrom = this.at(index - 1);
     let tmp = this.head;
     if (tmp.value === insertFrom) {
@@ -141,7 +144,6 @@ class LinkedList {
         });
       }
     }
-    return -1;
   }
 }
 export { LinkedList };
