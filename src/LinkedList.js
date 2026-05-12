@@ -145,5 +145,21 @@ class LinkedList {
       }
     }
   }
+  removeAt(index) {
+    if (index < 0 || index >= this.size()) {
+      throw RangeError;
+    }
+    const removeFrom = this.at(index - 1);
+    let tmp = this.head;
+    if (tmp.value === removeFrom) {
+      tmp.nextNode = tmp.nextNode.nextNode;
+    }
+    while (tmp.nextNode !== null) {
+      tmp = tmp.nextNode;
+      if (tmp.value === removeFrom) {
+        tmp.nextNode = tmp.nextNode.nextNode;
+      }
+    }
+  }
 }
 export { LinkedList };
