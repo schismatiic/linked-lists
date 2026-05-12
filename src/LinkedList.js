@@ -70,12 +70,16 @@ class LinkedList {
       return undefined;
     } else {
       let tmp = this.head;
-      while (tmp.nextNode !== null && count <= index) {
+      if (value === tmp.value) {
+        return true;
+      }
+      while (tmp.nextNode !== null) {
         tmp = tmp.nextNode;
         if (tmp.value === value) {
-          return tmp.value;
+          return true;
         }
       }
+      return false;
     }
   }
   toString() {
