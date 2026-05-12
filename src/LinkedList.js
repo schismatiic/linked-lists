@@ -47,6 +47,21 @@ class LinkedList {
       }
     }
   }
+  at(index) {
+    if (this.head === null) {
+      return undefined;
+    } else {
+      let count = 0;
+      let tmp = this.head;
+      while (tmp.nextNode !== null && count <= index) {
+        tmp = tmp.nextNode;
+        count++;
+        if (count === index) {
+          return tmp.value;
+        }
+      }
+    }
+  }
   toString() {
     let stringToPrint = "";
     let tmp = this.head;
