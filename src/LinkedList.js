@@ -82,6 +82,25 @@ class LinkedList {
       return false;
     }
   }
+  findIndex(value) {
+    if (this.head === null) {
+      return undefined;
+    } else {
+      let count = 0;
+      let tmp = this.head;
+      if (value === tmp.value) {
+        return 0;
+      }
+      while (tmp.nextNode !== null) {
+        tmp = tmp.nextNode;
+        count++;
+        if (tmp.value === value) {
+          return count;
+        }
+      }
+      return -1;
+    }
+  }
   toString() {
     let stringToPrint = "";
     let tmp = this.head;
