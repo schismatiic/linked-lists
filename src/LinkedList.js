@@ -34,6 +34,19 @@ class LinkedList {
   returnHead() {
     return this.head !== null ? this.head.value : undefined;
   }
+  tail() {
+    if (this.head === null) {
+      return undefined;
+    } else {
+      let tmp = this.head;
+      while (tmp.nextNode !== null) {
+        tmp = tmp.nextNode;
+        if (tmp.nextNode === null) {
+          return tmp.value;
+        }
+      }
+    }
+  }
   toString() {
     let stringToPrint = "";
     let tmp = this.head;
