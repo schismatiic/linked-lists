@@ -65,6 +65,15 @@ class LinkedList {
       }
     }
   }
+  pop() {
+    if (this.head === null) {
+      return undefined;
+    } else {
+      let deletedHead = this.head;
+      this.head = this.head.nextNode;
+      return deletedHead.value;
+    }
+  }
   contains(value) {
     if (this.head === null) {
       return undefined;
