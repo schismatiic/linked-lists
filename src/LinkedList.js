@@ -17,6 +17,20 @@ class LinkedList {
     this.head = new Node(value, this.head);
     return this.head;
   }
+  size() {
+    if (this.head === null) {
+      return 0;
+    } else {
+      let count = 0;
+      let tmp = this.head;
+      count++;
+      while (tmp.nextNode !== null) {
+        tmp = tmp.nextNode;
+        count++;
+      }
+      return count;
+    }
+  }
   returnHead() {
     return this.head !== null ? this.head.value : undefined;
   }
